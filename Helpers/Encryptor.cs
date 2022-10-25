@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace GLS_BlazorMVC_PoC.Helpers
+namespace Helpers.Helpers
 {
     /// <summary>
     /// Basic Encryption/Decryption API created by Eng.AAM for Encrypting passwords and Decrypting them.
@@ -13,13 +13,12 @@ namespace GLS_BlazorMVC_PoC.Helpers
         /// </summary>
         /// <param name="encryptString">The password to be encrypted.</param>
         /// <returns>Encrypted Password.</returns>
-        public static string Encrypt(string encryptString)
+        public static string Encrypt(string encryptString, string encryptKey)
         {
-            string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             byte[] clearBytes = Encoding.Unicode.GetBytes(encryptString);
             using (Aes encryptor = Aes.Create())
             {
-                var pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
+                var pdb = new Rfc2898DeriveBytes(encryptKey, new byte[] {
                 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
                 });
                 encryptor.Key = pdb.GetBytes(32);
@@ -42,14 +41,13 @@ namespace GLS_BlazorMVC_PoC.Helpers
         /// </summary>
         /// <param name="cipherText">Encrypted password.</param>
         /// <returns>Original password.</returns>
-        public static string Decrypt(string cipherText)
+        public static string Decrypt(string cipherText, string decryptKey)
         {
-            string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             cipherText = cipherText.Replace(" ", "+");
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {
-                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(decryptKey, new byte[] {
                 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
                 });
                 encryptor.Key = pdb.GetBytes(32);

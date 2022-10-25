@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace GLS_BlazorMVC_PoC.Helpers
+namespace Helpers.Helpers
 {
     /// <summary>
     /// Basic hashing API created by Eng.AAM for hashing passwords and comparisions.
