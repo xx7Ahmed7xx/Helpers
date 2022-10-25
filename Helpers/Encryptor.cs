@@ -245,7 +245,7 @@ namespace AAM.Helpers
                 // from the FileSteam of the encrypted
                 // file (inFs) into the FileStream
                 // for the decrypted file (outFs).
-                using (var outFs = new FileStream(file.FullName.Replace(".dbem", ""), FileMode.OpenOrCreate))
+                using (var outFs = new FileStream(file.Directory + "\\DECRYPTED_" + file.Name.Replace(".enc", ""), FileMode.OpenOrCreate))
                 {
                     int count = 0;
                     int offset = 0;
