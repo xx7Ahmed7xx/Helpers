@@ -9,10 +9,10 @@ namespace Helpers.Helpers
     public class Encryptor
     {
         /// <summary>
-        /// Encrypt a given password using Rfc2898.
+        /// Encrypt a given string using Rfc2898.
         /// </summary>
         /// <param name="encryptString">The password to be encrypted.</param>
-        /// <returns>Encrypted Password.</returns>
+        /// <returns>Encrypted string.</returns>
         public static string Encrypt(string encryptString, string encryptKey)
         {
             byte[] clearBytes = Encoding.Unicode.GetBytes(encryptString);
@@ -37,10 +37,10 @@ namespace Helpers.Helpers
         }
 
         /// <summary>
-        /// Decrypt a given password using Rfc2898.
+        /// Decrypt a given string using Rfc2898.
         /// </summary>
         /// <param name="cipherText">Encrypted password.</param>
-        /// <returns>Original password.</returns>
+        /// <returns>Original string.</returns>
         public static string Decrypt(string cipherText, string decryptKey)
         {
             cipherText = cipherText.Replace(" ", "+");
