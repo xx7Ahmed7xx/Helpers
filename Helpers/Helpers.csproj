@@ -6,10 +6,10 @@
     <Nullable>enable</Nullable>
 
     <PackageId>AAM.Helpers</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.1.2</Version>
     <Authors>Ahmed Ayman Mansour</Authors>
     <Company></Company>
-    <Description>A nuget package that contains some namespaces for manipulating strings such as encrypting, hashing, etc..</Description>
+    <Description>A nuget package that contains some namespaces for manipulating strings (and bytes) such as encrypting, hashing, etc..</Description>
     <Copyright>All rights reserved, no copying/modifying allowed without proper permission from me (i.e, Ahmed A. Mansour)</Copyright>
     <PackageProjectUrl>https://github.com/xx7Ahmed7xx/Helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/xx7Ahmed7xx/Helpers/tree/master/Helpers</RepositoryUrl>
@@ -19,7 +19,18 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <Title>A package made by engineer, for engineers</Title>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 	  
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
