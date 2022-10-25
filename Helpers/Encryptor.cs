@@ -8,12 +8,13 @@ namespace AAM.Helpers
     /// </summary>
     public class Encryptor
     {
-        
+
 
         /// <summary>
         /// Encrypt a given string using Rfc2898.
         /// </summary>
         /// <param name="encryptString">The password to be encrypted.</param>
+        /// <param name="encryptKey">The encryption key to use in the encryption.</param>
         /// <returns>Encrypted string.</returns>
         public static string Encrypt(string encryptString, string encryptKey)
         {
@@ -42,6 +43,7 @@ namespace AAM.Helpers
         /// Decrypt a given string using Rfc2898.
         /// </summary>
         /// <param name="cipherText">Encrypted password.</param>
+        /// <param name="decryptKey">The encryption key to use in the decryption.</param>
         /// <returns>Original string.</returns>
         public static string Decrypt(string cipherText, string decryptKey)
         {
