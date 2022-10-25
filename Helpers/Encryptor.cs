@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Helpers.Helpers
+namespace AAM.Helpers
 {
     /// <summary>
     /// Basic Encryption/Decryption API created by Eng.AAM for Encrypting passwords and Decrypting them.
@@ -72,7 +72,7 @@ namespace Helpers.Helpers
         /// </summary>
         /// <param name="file">The FileInfo object to be read and encrypted.</param>
         /// <param name="encryptKey">The encryption key to use in the encryption.</param>
-        public void EncryptFile(FileInfo file, string encryptKey)
+        public static void EncryptFile(FileInfo file, string encryptKey)
         {
             // Declare CspParmeters and RsaCryptoServiceProvider objects.
             CspParameters _cspp = new CspParameters();
@@ -161,7 +161,7 @@ namespace Helpers.Helpers
         /// <param name="file">The FileInfo object to be read and decrypted.</param>
         /// <param name="decryptKey">The encryption key to use in the decryption.</param>
         /// <returns>Returns 1 if successful, -1 if key is wrong, Exception otherwise.</returns>
-        public int DecryptFile(FileInfo file, string decryptKey)
+        public static int DecryptFile(FileInfo file, string decryptKey)
         {
             // Create instance of Aes for
             // symmetric decryption of the data.
