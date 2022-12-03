@@ -1,4 +1,4 @@
-﻿using ApplicationRecorderCORE;
+﻿using Helpers;
 using NAudio.Wave;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
 using SharpDX.Multimedia;
 
-namespace RecordingCORE
+namespace Helpers
 {
 
     /// <summary>

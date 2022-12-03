@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ApplicationRecorderCORE
+namespace Helpers
 {
     internal class ScreenStateLogger : IDisposable
     {
