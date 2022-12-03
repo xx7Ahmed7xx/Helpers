@@ -5,8 +5,8 @@ This is a small work done by other developers around the globe, But everytime I 
 ## What does the project contain?
 1. Hasher
 2. Encryptor / Decryptor
-        2.1 For strings
-        2.2 For files
+     - For strings
+     - For files
 3. Audio & Video Recorder
 #### More upcoming!
 ## How to use?
