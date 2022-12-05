@@ -213,7 +213,7 @@ namespace AAM.Helpers
         {
             string parentPath = Directory.GetParent(Environment.ProcessPath).FullName + "\\";
             Thread.Sleep(500);
-            if (Bitmaps1 == null || Bitmaps2 == null)
+            if (Bitmaps1 != null && Bitmaps2 != null)
             {
                 for (int i = 0; i < Bitmaps1.Count; i++)
                 {
