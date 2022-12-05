@@ -12,6 +12,8 @@ This is a small work done by other developers around the globe, But everytime I 
 ## How to use?
 Simply download the project and compile to create a .dll library file and use it in your project...
 #### Or..
-Add it from nuget package manager either by searching for AAM.Helpers or using this command to install it: Install-Package AAM.Helpers -Version 1.2.2
+Add it from nuget package manager either by searching for AAM.Helpers or using this command to install it: Install-Package AAM.Helpers
+### Warning!!!
+Currently older methods that doesn't have the suffix SIMPLE is not working correctly, Please use the Methods ending with SIMPLE.
 ## Official package website:
 https://www.nuget.org/packages/AAM.Helpers/

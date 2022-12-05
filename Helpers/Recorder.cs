@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
 using SharpDX.Multimedia;
 
-namespace Helpers
+namespace AAM.Helpers
 {
 
     /// <summary>
@@ -110,7 +110,7 @@ namespace Helpers
             ffmpegProc.StartInfo.RedirectStandardInput = true;
             ffmpegProc.StartInfo.Arguments
                 =
-                $".\\ffmpeg -f gdigrab -i title='{processWindowTitle}' -b:v 3M  1.mp4";
+                $".\\ffmpeg -f gdigrab -i title='{processWindowTitle}' -b:v 3M -pix_fmt yuv420p 1.mp4";
             ffmpegProc.Start();
             while (keepRecording)
             {
@@ -126,7 +126,7 @@ namespace Helpers
         /// Starts the WindowScreen recording process, Which records a specific application using Windows APIs
         /// Calls to take image of the current main application window, Saves the images to the provided ListBitmap.
         /// </summary>
-        /// <remarks>Warning: Better to use <see cref="StartWindowScreenSimpleRecording(string)()"/>, This one has issues in recording frames.</remarks>
+        /// <remarks>Warning: Better to use <see cref="StartWindowScreenSimpleRecording(string)"/>, This one has issues in recording frames.</remarks>
         /// <param name="windowHandl">The main window handle of the application to be recorded.</param>
         /// <param name="screens">The List of bitmaps object to store onto.</param>
         /// <param name="frameRatePerSecond">Number of frames to be taken, each Second. Default is 30.</param>
@@ -200,6 +200,99 @@ namespace Helpers
                 micWaveSource.StopRecording();
         }
 
+        /// <summary>
+        /// Saves all files created by the older methods, If there is a provided Bitmap lists, It will use it to write
+        /// temporary memory files onto disk to save them as a video using the FFMpeg API.
+        /// <br /> Otherwise, It will save just files created by the FFMpeg directly, from Simple methods onto the target path.
+        /// </summary>
+        /// <param name="videoPath">The video relative path, you don't need to put file extension (example: filename ONLY).</param>
+        /// <param name="frameRate">Target framerate of the video, currently unused. Default is 30 FPS.</param>
+        /// <param name="Bitmaps1">First bitmap lists to be written to disk (provided you used older methods).</param>
+        /// <param name="Bitmaps2">Second bitmap lists to be written to disk (provided you used older methods)</param>
+        public static void SaveFullVideo(string videoPath, int frameRate = 30, List<Bitmap> Bitmaps1 = null, List<Bitmap> Bitmaps2 = null)
+        {
+            string parentPath = Directory.GetParent(Environment.ProcessPath).FullName + "\\";
+            Thread.Sleep(500);
+            if (Bitmaps1 == null || Bitmaps2 == null)
+            {
+                for (int i = 0; i < Bitmaps1.Count; i++)
+                {
+                    Bitmaps1[i].Save(parentPath + $"{i}.png", ImageFormat.Png);
+                    Bitmaps1[i].Dispose();
+                }
+                Bitmaps1.Clear();
+
+                for (int i = 0; i < Bitmaps2.Count; i++)
+                {
+                    Bitmaps2[i].Save(parentPath + $"{i}.png", ImageFormat.Png);
+                    Bitmaps2[i].Dispose();
+                }
+                Bitmaps2.Clear();
+            }
+
+
+            Process ffmpegProc = new Process();
+            ffmpegProc.StartInfo.FileName = "powershell";
+            ffmpegProc.StartInfo.CreateNoWindow = true;
+            // Concat all wav files, incase we are recording both audios.
+            string[] wavFiles = Directory.GetFiles(parentPath, "*.wav");
+            if (wavFiles.Length == 1)
+            {
+                foreach (var file in wavFiles)
+                {
+                    File.Move(file, Path.Combine(parentPath, "output.wav"));
+                }
+            }
+            else
+            {
+                ffmpegProc.StartInfo.Arguments
+                    =
+                    $".\\ffmpeg -i 1.wav -i 2.wav -filter_complex amix=inputs=2:duration=longest output.wav";
+                ffmpegProc.Start();
+                ffmpegProc.WaitForExit();
+            }
+
+            // Now check if there is a created mp4 video file, because of simple recording for example.
+            string[] mp4Files = Directory.GetFiles(parentPath, "*.mp4");
+            if (mp4Files.Length == 1)
+            {
+                ffmpegProc.StartInfo.Arguments
+                =
+                $".\\ffmpeg -i 1.mp4 -i output.wav -c:v copy -c:a aac {videoPath}.mp4";
+                ffmpegProc.Start();
+                ffmpegProc.WaitForExit();
+            }
+            else if (mp4Files.Length == 0)
+            {
+                ffmpegProc.StartInfo.Arguments
+                =
+                $".\\ffmpeg -framerate {frameRate} -pattern_type sequence -i '%d.png' -i 'output.wav' -c:v libx264 -pix_fmt yuv420p '{videoPath}.mp4'";
+                ffmpegProc.Start();
+                ffmpegProc.WaitForExit();
+            }
+
+            // Delete previous recorded files, If found.
+            string[] directoryFiles1 = Directory.GetFiles(parentPath, "*.png");
+            foreach (string directoryFile in directoryFiles1)
+            {
+                File.Delete(directoryFile);
+            }
+            string[] directoryFiles2 = Directory.GetFiles(parentPath, "*.wav");
+            foreach (string directoryFile in directoryFiles2)
+            {
+                File.Delete(directoryFile);
+            }
+            string[] directoryFiles3 = Directory.GetFiles(parentPath, "*.mp4");
+            foreach (string directoryFile in directoryFiles3)
+            {
+                if (new FileInfo(directoryFile).Name.Contains("1"))
+                    File.Delete(directoryFile);
+            }
+            if (ffmpegProc.ExitCode == 0)
+            {
+                MessageBox.Show("Video saved successfully!");
+            }
+        }
 
         [DllImport("user32.dll")]
         internal static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
