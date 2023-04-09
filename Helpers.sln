@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers.Desktop", "Desktop\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers.Backend", "Backend\Helpers.Backend.csproj", "{A060F051-7A52-49DA-A07E-63FF5F4722FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Common", "Helpers.Common\Helpers.Common.csproj", "{1A95E8A7-9A49-48B3-9008-EF59580843D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Common", "Common\Helpers.Common.csproj", "{1A95E8A7-9A49-48B3-9008-EF59580843D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
