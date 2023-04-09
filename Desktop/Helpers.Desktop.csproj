@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>AAM.Helpers.Desktop</PackageId>
-    <Version>2.0.1</Version>
+    <Version>2.1.0</Version>
     <Authors>Ahmed Ayman Mansour</Authors>
     <Company></Company>
     <Description>A nuget package that contains some namespaces for manipulating strings (and bytes) such as encrypting, hashing, recording audio and video, etc..</Description>
@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/xx7Ahmed7xx/Helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/xx7Ahmed7xx/Helpers/tree/master/Helpers</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageTags>Hash;Encrypt;Decrypt;Audio;Video;dotNETCore;</PackageTags>
+    <PackageTags>Desktop;Audio;Video;dotNETCore;</PackageTags>
 
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 

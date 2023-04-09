@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers.Desktop", "Desktop\Helpers.Desktop.csproj", "{986C24CA-1C71-41B3-BDD8-C1C1D35F2D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Backend", "Backend\Helpers.Backend.csproj", "{A060F051-7A52-49DA-A07E-63FF5F4722FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers.Backend", "Backend\Helpers.Backend.csproj", "{A060F051-7A52-49DA-A07E-63FF5F4722FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Common", "Helpers.Common\Helpers.Common.csproj", "{1A95E8A7-9A49-48B3-9008-EF59580843D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A060F051-7A52-49DA-A07E-63FF5F4722FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A060F051-7A52-49DA-A07E-63FF5F4722FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A060F051-7A52-49DA-A07E-63FF5F4722FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A95E8A7-9A49-48B3-9008-EF59580843D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A95E8A7-9A49-48B3-9008-EF59580843D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A95E8A7-9A49-48B3-9008-EF59580843D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A95E8A7-9A49-48B3-9008-EF59580843D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

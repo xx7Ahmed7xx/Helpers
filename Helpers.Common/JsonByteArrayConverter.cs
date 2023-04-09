@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Helpers
+namespace AAM.Helpers.Common
 {
     /// <summary>
     /// Supports converting from Base64 String into JsonByteArray, and vice versa.

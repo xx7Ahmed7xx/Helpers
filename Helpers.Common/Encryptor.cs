@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace AAM.Helpers.Backend
+namespace AAM.Helpers.Common
 {
     /// <summary>
     /// Basic Encryption/Decryption API created by Eng.AAM for Encrypting passwords and Decrypting them.

@@ -4,17 +4,16 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
-	  <PackageId>AAM.Helpers.Backend</PackageId>
+	  <PackageId>AAM.Helpers.Common</PackageId>
 	  <Version>2.1.0</Version>
 	  <Authors>Ahmed Ayman Mansour</Authors>
 	  <Company></Company>
-	  <Description>A nuget package that contains helper classes for backend.</Description>
+	  <Description>A nuget package that contains common helper classes.</Description>
 	  <Copyright>All rights reserved, no copying/modifying allowed without proper permission from me (i.e, Ahmed A. Mansour)</Copyright>
 	  <PackageProjectUrl>https://github.com/xx7Ahmed7xx/Helpers</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/xx7Ahmed7xx/Helpers/tree/master/Helpers</RepositoryUrl>
 	  <NeutralLanguage>en</NeutralLanguage>
-	  <PackageTags>Backend;WebApi;dotNETCore;</PackageTags>
+	  <PackageTags>Common;Hash;Encrypt;Decrypt;Json;dotNETCore;</PackageTags>
 
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
@@ -36,11 +35,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
 </Project>
