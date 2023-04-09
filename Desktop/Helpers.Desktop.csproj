@@ -7,10 +7,10 @@
     <Nullable>enable</Nullable>
 
     <PackageId>AAM.Helpers.Desktop</PackageId>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <Authors>Ahmed Ayman Mansour</Authors>
     <Company></Company>
-    <Description>A nuget package that contains some namespaces for manipulating strings (and bytes) such as encrypting, hashing, recording audio and video, etc..</Description>
+    <Description>A nuget package that contains helper classes for recording audio and video.</Description>
     <Copyright>All rights reserved, no copying/modifying allowed without proper permission from me (i.e, Ahmed A. Mansour)</Copyright>
     <PackageProjectUrl>https://github.com/xx7Ahmed7xx/Helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/xx7Ahmed7xx/Helpers/tree/master/Helpers</RepositoryUrl>
