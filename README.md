@@ -17,4 +17,5 @@ Add it from nuget package manager either by searching for AAM.Helpers or using t
 ### Warning!!!
 Currently older methods that doesn't have the suffix SIMPLE is not working correctly, Please use the Methods ending with SIMPLE.
 ## Official package website:
-https://www.nuget.org/packages/AAM.Helpers/
+https://www.nuget.org/packages/AAM.Helpers.Backend/
+https://www.nuget.org/packages/AAM.Helpers.Desktop/

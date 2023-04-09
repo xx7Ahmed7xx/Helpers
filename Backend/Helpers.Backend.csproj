@@ -28,31 +28,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AAM Package Logo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\Desktop\AAM Package Logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md" Link="README.md">
-      <PackagePath>\</PackagePath>
+    <None Include="..\README.md">
       <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="AAM Package Logo.png">
-      <PackagePath>\</PackagePath>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Pack>True</Pack>
-    </Resource>
   </ItemGroup>
 
 </Project>
