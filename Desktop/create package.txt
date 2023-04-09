@@ -1,1 +1,0 @@
-dotnet nuget push C:\Users\ahmad\source\repos\Helpers\Helpers\bin\Debug\AAM.Helpers.1.2.6.nupkg --api-key oy2ogfqfse22lghrsqoqlh4c4cr6q7ve5mejn3hfmcq5kq --source https://api.nuget.org/v3/index.json
