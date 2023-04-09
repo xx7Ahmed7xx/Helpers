@@ -1,10 +1,7 @@
-﻿using Helpers;
-using NAudio.Wave;
+﻿using NAudio.Wave;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
-using SharpDX.Multimedia;
 using System.Xml.Serialization;
 
 namespace AAM.Helpers.Desktop
