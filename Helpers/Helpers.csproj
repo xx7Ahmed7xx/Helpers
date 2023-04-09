@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
+	<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
 	<UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -19,7 +19,7 @@
 
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
     <Title>A package made by engineer, for engineers</Title>
 
@@ -28,6 +28,10 @@
     <PackageIcon>AAM Package Logo.png</PackageIcon>
 	  
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AAM Package Logo.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
@@ -46,11 +50,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AAM Package Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Resource Include="AAM Package Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="ffmpeg.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

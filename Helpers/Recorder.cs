@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
 using SharpDX.Multimedia;
+using System.Xml.Serialization;
 
 namespace AAM.Helpers
 {
@@ -72,7 +73,7 @@ namespace AAM.Helpers
         /// Starts the FullScreen recording process, Which records the whole Monitor using SharpDX Libraries.
         /// This method saves the recorded frames (Images) into the provided MemoryStream.
         /// </summary>
-        /// <remarks>Warning: Better to use <see cref="StartFullScreenSimpleRecording(string)()"/>, This one has issues in recording frames.</remarks>
+        /// <remarks>Warning: Better to use <see cref="StartFullScreenSimpleRecording(string)"/>, This one has issues in recording frames.</remarks>
         /// <param name="imagesStreams">The stream on which the frames will be saved.</param>
         /// <param name="frameRatePerSecond">Number of frames to be taken, each Second. Default is 30</param>
         public static void StartFullScreenRecording(List<Bitmap> imagesStreams, int frameRatePerSecond = 30)
@@ -322,10 +323,10 @@ namespace AAM.Helpers
         {
             if (obj == null)
                 return null;
-            BinaryFormatter bf = new BinaryFormatter();
+            XmlSerializer xs = new XmlSerializer(typeof(object));
             using (MemoryStream ms = new MemoryStream())
             {
-                bf.Serialize(ms, obj);
+                xs.Serialize(ms, obj);
                 return ms.ToArray();
             }
         }
