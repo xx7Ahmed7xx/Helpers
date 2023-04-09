@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace AAM.Helpers.Desktop
+namespace AAM.Helpers.Backend
 {
     /// <summary>
     /// Basic hashing API created by Eng.AAM for hashing passwords and comparisions.

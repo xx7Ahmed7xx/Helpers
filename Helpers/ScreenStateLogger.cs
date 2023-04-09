@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Helpers
+namespace AAM.Helpers.Desktop
 {
     internal class ScreenStateLogger : IDisposable
     {

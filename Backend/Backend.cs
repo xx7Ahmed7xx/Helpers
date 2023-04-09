@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Helpers
+namespace AAM.Helpers.Backend
 {
     /// <summary>
     /// The Backend class is designed to work with ASP.NET Core environment. Provides helpful functionalities to backend developers.
@@ -14,67 +14,6 @@ namespace Helpers
     /// </summary>
     public class Backend
     {
-        /// <summary>
-        /// Converts a given Image object into it's base 64 string representation.
-        /// </summary>
-        /// <param name="image">The image object to be converted.</param>
-        /// <returns>64 encoded string represtation of the image. (Ex data:image/gif;base64,/9j/4AAQSkZJRgABAgEAYABgAAD..)</returns>
-        public static string ConvertImageTo64String(Image image) 
-        {
-            using (image)
-            {
-                using (MemoryStream m = new MemoryStream())
-                {
-                    image.Save(m, image.RawFormat);
-                    byte[] imageBytes = m.ToArray();
-                    return Convert.ToBase64String(imageBytes);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Converts the encoded 64 string Image data into Image object.
-        /// </summary>
-        /// <param name="imageString">The encoded 64 string data.</param>
-        /// <returns>Image object to be used.</returns>
-        public static Image Convert64StringToImage(string imageString)
-        {
-            using (MemoryStream m = new MemoryStream(Convert.FromBase64String(imageString)))
-            {
-                return Image.FromStream(m);
-            }
-        }
-
-        /// <summary>
-        /// Converts a given Image object into it's byte array representation.
-        /// </summary>
-        /// <param name="image">The image object to be converted.</param>
-        /// <returns>Byte array representation of the image.</returns>
-        public static byte[] ConvertImageToBytes(Image image)
-        {
-            using (image)
-            {
-                using (MemoryStream m = new MemoryStream())
-                {
-                    image.Save(m, image.RawFormat);
-                    return m.ToArray();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Converts the bytes array of the Image into actual Image object.
-        /// </summary>
-        /// <param name="bytes">The bytes array to be converted.</param>
-        /// <returns>Image object to be used.</returns>
-        public static Image ConvertBytesToImage(byte[] bytes)
-        {
-            using (MemoryStream m = new MemoryStream(bytes))
-            {
-                return Image.FromStream(m);
-            }
-        }
-
         /// <summary>
         /// Converts a given IFormFile object into it's byte array representation.
         /// </summary>

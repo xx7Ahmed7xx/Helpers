@@ -7,7 +7,7 @@ using System.Diagnostics;
 using SharpDX.Multimedia;
 using System.Xml.Serialization;
 
-namespace AAM.Helpers
+namespace AAM.Helpers.Desktop
 {
 
     /// <summary>
