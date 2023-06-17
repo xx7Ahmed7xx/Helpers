@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AAM.Helpers.Common
+namespace AAM.Helpers.Backend
 {
     /// <summary>
     /// The Files class is designed to work with ASP.NET Core environment. Provides helpful functionalities to backend developers uploading/downloading files from their server.

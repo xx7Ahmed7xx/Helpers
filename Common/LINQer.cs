@@ -15,7 +15,7 @@
         /// <returns>The number of objects specified in pagesize, in the given page number.</returns>
         public static async Task<List<T>> GetPageAsync<T>(IQueryable<T> input, int page, int pagesize)
         {
-            return (List<T>)await Task.FromResult(input.Skip((page - 1) * pagesize).Take(pagesize));
+            return (await Task.FromResult(input.Skip((page - 1) * pagesize).Take(pagesize))).ToList();
         }
 
         /// <summary>
