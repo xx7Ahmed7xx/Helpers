@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>AAM.Helpers.Common</PackageId>
-	  <Version>2.2.4</Version>
+	  <Version>2.2.5</Version>
 	  <Authors>Ahmed Ayman Mansour</Authors>
 	  <Company></Company>
 	  <Description>A nuget package that contains common helper classes.</Description>
