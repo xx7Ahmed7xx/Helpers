@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Helpers.Desktop
+namespace AAM.Helpers.Desktop
 {
     /// <summary>
     /// A class to provide means of setting margin to all child elements in StackPanel. <br></br>

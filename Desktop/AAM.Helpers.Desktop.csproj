@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>AAM.Helpers.Desktop</PackageId>
-    <Version>2.2.2</Version>
+    <Version>2.2.3</Version>
     <Authors>Ahmed Ayman Mansour</Authors>
     <Company></Company>
     <Description>A nuget package that contains helper classes for recording audio and video.</Description>

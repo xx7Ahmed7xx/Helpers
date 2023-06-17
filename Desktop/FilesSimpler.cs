@@ -1,7 +1,7 @@
 ﻿using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Helpers.Desktop
+namespace AAM.Helpers.Desktop
 {
     /// <summary>
     /// Simple files manipulation class.

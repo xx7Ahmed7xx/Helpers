@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 
-namespace Helpers.Desktop
+namespace AAM.Helpers.Desktop
 {
     /// <summary>
     /// PDF Automation helper class to manipulate PDFs. <br></br>

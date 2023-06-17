@@ -1,4 +1,4 @@
-﻿namespace Helpers.Common
+﻿namespace AAM.Helpers.Common
 {
     /// <summary>
     /// LINQ Helper Class for working with LINQ objects.
