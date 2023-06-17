@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Drawing.Imaging;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace AAM.Helpers.Desktop
@@ -13,7 +14,7 @@ namespace AAM.Helpers.Desktop
         /// </summary>
         /// <param name="relativePath">Path to the Image file.</param>
         /// <returns>ImageSource (specifically BitmapImage) Object.</returns>
-        public static ImageSource LoadImageRelativePath(string relativePath)
+        public static ImageSource LoadImageSourceFromPath(string relativePath)
         {
             var bmp = new BitmapImage();
             using (var stream = File.OpenRead(relativePath))
@@ -24,6 +25,26 @@ namespace AAM.Helpers.Desktop
                 bmp.EndInit();
             }
             return bmp;
+        }
+
+        /// <summary>
+        /// Loads an image as ImageSource object into memory.
+        /// </summary>
+        /// <param name="img">Image object to be converted.</param>
+        /// <returns>ImageSource (specifically BitmapImage) Object.</returns>
+        public static ImageSource LoadImageSourceFromImage(Image img)
+        {
+            using (var memory = new MemoryStream())
+            {
+                img.Save(memory, ImageFormat.Png);
+                memory.Position = 0;
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = memory;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+                return bitmapImage;
+            }
         }
 
         /// <summary>
