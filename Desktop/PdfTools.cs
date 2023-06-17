@@ -28,19 +28,18 @@ namespace AAM.Helpers.Desktop
         }
 
         /// <summary>
-        /// Reads a given PDF and converts it's pages into images per each.
+        /// Reads a given PDF and converts it's pages into images per each, then saves them to disk.
         /// </summary>
         /// <param name="inputPDF">Path to the PDF file.</param>
+        /// <param name="DPI">DPI value of reading the PDF.</param>
         /// <returns>The number of pages in the given PDF file.</returns>
-        public static int ConvertPdf2PngImages(string inputPDF)
+        public static int ConvertPdf2PngImagesDisk(string inputPDF, int DPI = 96)
         {
-            int desired_dpi = 96;
-
-            string inputPdfPath = inputPDF;
+            int desired_dpi = DPI;
             string outputPath = Directory.CreateDirectory("TempImagesFromLastPDF").Name;
 
             // Use File Stream to open the input pdf files, to suppress Security exception in IO.
-            using (var inputStream = File.Open(inputPdfPath, FileMode.Open))
+            using (var inputStream = File.Open(inputPDF, FileMode.Open))
             {
                 using (var rasterizer = new GhostscriptRasterizer())
                 {
@@ -56,6 +55,36 @@ namespace AAM.Helpers.Desktop
                     return rasterizer.PageCount;
                 }
             }
+        }
+
+        /// <summary>
+        /// Reads a given PDF and converts it's pages into images per each.
+        /// </summary>
+        /// <param name="inputPDF">Path to the PDF file.</param>
+        /// <param name="DPI">DPI value of reading the PDF.</param>
+        /// <returns>The pages of the given PDF file as a List of Images.</returns>
+        public static List<Image> ConvertPdf2PngImagesMem(string inputPDF, int DPI = 96)
+        {
+            int desired_dpi = DPI;
+            string outputPath = Directory.CreateDirectory("TempImagesFromLastPDF").Name;
+
+            List<Image> images = new List<Image>();
+
+            // Use File Stream to open the input pdf files, to suppress Security exception in IO.
+            using (var inputStream = File.Open(inputPDF, FileMode.Open))
+            {
+                using (var rasterizer = new GhostscriptRasterizer())
+                {
+                    rasterizer.Open(inputStream);
+
+                    for (var pageNumber = 1; pageNumber <= rasterizer.PageCount; pageNumber++)
+                    {
+                        var pageFilePath = Path.Combine(outputPath, string.Format("Page-{0}.png", pageNumber));
+                        images.Add(rasterizer.GetPage(desired_dpi, pageNumber));
+                    }
+                }
+            }
+            return images;
         }
     }
 }
