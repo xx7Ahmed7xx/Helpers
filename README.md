@@ -11,10 +11,12 @@ Various projects that supporting the following:
      - For strings
      - For files
 3. Audio & Video Recorder
-4. Backend
-5. LINQer
-6. File Manipulator
-7. Styles for XAML
+4. Objects Mapper
+5. FormFiles Manipulator
+6. LINQer
+7. File Manipulator
+8. Styles for XAML
+9. Global ASP.NET Core Exception Handling Filter
 
 #### More upcoming!
 
