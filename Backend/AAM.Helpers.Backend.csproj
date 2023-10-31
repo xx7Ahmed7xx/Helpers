@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
 	  <PackageId>AAM.Helpers.Backend</PackageId>
-	  <Version>2.3.1</Version>
+	  <Version>2.4.0</Version>
 	  <Authors>Ahmed Ayman Mansour</Authors>
 	  <Company></Company>
 	  <Description>A nuget package that contains helper classes for backend.</Description>

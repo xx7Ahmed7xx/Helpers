@@ -17,6 +17,7 @@ Various projects that supporting the following:
 7. File Manipulator
 8. Styles for XAML
 9. Global ASP.NET Core Exception Handling Filter
+10. Firebase REST API integartion for easy rich push notifications.
 
 #### More upcoming!
 

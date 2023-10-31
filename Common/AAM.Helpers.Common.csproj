@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>AAM.Helpers.Common</PackageId>
-	  <Version>2.3.1</Version>
+	  <Version>2.4.0</Version>
 	  <Authors>Ahmed Ayman Mansour</Authors>
 	  <Company></Company>
 	  <Description>A nuget package that contains common helper classes.</Description>
@@ -13,7 +13,7 @@
 	  <PackageProjectUrl>https://github.com/xx7Ahmed7xx/Helpers</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/xx7Ahmed7xx/Helpers/tree/master/Helpers</RepositoryUrl>
 	  <NeutralLanguage>en</NeutralLanguage>
-	  <PackageTags>Common;Hash;Encrypt;Decrypt;Json;dotNETCore;</PackageTags>
+	  <PackageTags>Common;Hash;Encrypt;Decrypt;Json;dotNETCore;Firebase;</PackageTags>
 
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 

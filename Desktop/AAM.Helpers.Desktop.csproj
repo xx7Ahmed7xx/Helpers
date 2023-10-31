@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>AAM.Helpers.Desktop</PackageId>
-    <Version>2.3.1</Version>
+    <Version>2.4.0</Version>
     <Authors>Ahmed Ayman Mansour</Authors>
     <Company></Company>
     <Description>A nuget package that contains helper classes for recording audio and video.</Description>
@@ -42,9 +42,9 @@
 
   <ItemGroup>
 	  <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
-	  <PackageReference Include="Ghostscript.NET" Version="1.2.3" />
-	  <PackageReference Include="itext7" Version="8.0.0" />
-    <PackageReference Include="NAudio" Version="2.1.0" />
+	  <PackageReference Include="Ghostscript.NET" Version="1.2.3.1" />
+	  <PackageReference Include="itext7" Version="8.0.2" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="SharpDX" Version="4.2.0" />
     <PackageReference Include="SharpDX.Direct3D11" Version="4.2.0" />
     <PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
